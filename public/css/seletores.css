@@ -1,0 +1,100 @@
+.content ul.demo {
+    list-style: none;
+    margin: 0;
+}
+
+.content ul.demo>li {
+    border-left: 2px solid transparent;
+    background-color: #F0F0F0;
+    padding: 8px;
+    margin-bottom: 2px;
+}
+
+.content ul.demo>li.selected {
+    border-left: 2px solid #000;
+    background-color: #00FF00;
+}
+
+
+/** CODAR SELETORES **/
+
+/* EX 1*/
+.content ul.demo>li:first-child {
+    background-color: yellow;
+}
+/* EX 2: Fundo amarelo no li com classe exemplo */
+.content ul.demo>li.exemplo {
+    background-color: yellow;
+}
+
+/* EX 3: Texto vermelho no li com id unico */
+#unico {
+    color: red;
+}
+
+/* EX 4: Sublinhado no li com data-type="attr" */
+.content ul.demo>li[data-type="attr"] span {
+    text-decoration: underline;
+}
+
+/* EX 5: Itálico no li com data-role~="user" */
+.content ul.demo>li[data-role~="user"] span {
+    font-style: italic;
+}
+
+/* EX 6: Aumentar fonte do primeiro li */
+.content ul.demo>li:first-child span {
+    font-size: 1.3em;
+}
+
+/* EX 7: Borda azul no último li */
+.content ul.demo>li:last-child {
+    border: 2px solid blue;
+}
+
+/* EX 8: Fundo cinza no li com classe ativo */
+.content ul.demo>li.ativo {
+    background-color: #ccc;
+}
+
+/* EX 9: Negrito apenas no span dentro do li */
+.content ul.demo>li span {
+    font-weight: bold;
+}
+
+/* EX 10: Texto maiúsculo no li com duas classes especial e destaque */
+.content ul.demo>li.especial.destaque span {
+    text-transform: uppercase;
+}
+
+/* EX 11: Texto verde no li com atributo lang="pt-br" */
+.content ul.demo>li[lang="pt-br"] span {
+    color: green;
+}
+
+/* EX 12: Itálico no li com atributo title começando com "começa" */
+.content ul.demo>li[title^="começa"] span {
+    font-style: italic;
+}
+
+/* EX 13: Fundo rosa no li com atributo title terminando com "com" */
+.content ul.demo>li[title$="com"] {
+    background-color: pink;
+}
+
+/* Responsividade: aside abaixo do section em telas menores que 768px */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+        margin-top: 16px;
+        order: 2;
+    }
+    .content {
+        order: 1;
+    }
+}
+
+/** Continue aqui **/

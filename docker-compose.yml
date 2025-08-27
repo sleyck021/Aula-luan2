@@ -1,16 +1,13 @@
 services:
 
-  nginx_01:
+  nginx_tf_02:
     build:
       context: .
-      dockerfile: docker/nginx/Dockerfile
-    env_file:
-      - ./.env
+      dockerfile: ./docker/nginx/Dockerfile
     ports:
       - "8080:80"
     volumes:
       - ./public:/var/www
-      - ./logs/nginx:/var/log/nginx
     networks:
       - app_network
 
